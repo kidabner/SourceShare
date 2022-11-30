@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='files'>
+        {% for i in fileList%}
+            <a id="{{i}}" >{{i}}</a><br />
+        {% endfor %}
+    </div>
+    <script>
+        
+        var url = location.protocol+'//'+document.domain+':'+location.port+'/download/'
+        var b =document.getElementById("files").childNodes;
+        for(var i=0;i<b.length;i++){
+            b[i].href = url+b[i].textContent
+        }
+        
+       
+    </script>
+</body>
+</html>
